@@ -1,48 +1,167 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+:root {
+	--main-color: #000;
+	--secondary-color: rgb(111, 152, 190);
+	--complementary-color: rgb(180, 85, 59);
+	--padding: 10px;
+}
+* {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+	box-sizing: border-box;
 }
 body {
-	line-height: 1;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 18px;
 }
-ol, ul {
-	list-style: none;
+.site {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
 }
-blockquote, q {
-	quotes: none;
+.item {
+	color: var(--main-color, black);
+	border: 2px solid var(--main-color, black);
+	text-align: center;
+	padding: var(--padding, 0px);
+	margin-bottom: 10px;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+.item:last-child {
+	margin-bottom: 0;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+nav {
+	display: inline;
+}
+.logo {
+	float: left;
+	padding: 10px;
+}
+ul {
+	float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+	padding: 10px;
+    float: left;
+}
+
+
+
+.card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--secondary-color, black);
+	width: 100%;
+	padding: var(--padding, 0px);
+	margin-top: var(--padding, 0px);
+	color: var(--secondary-color, black);
+}
+.card>p {
+	text-align: center;
+	padding-left: var(--padding, 0px);
+}
+.photo {
+	align-self: center;
+	background-color: var(--secondary-color, black);
+	width: 100px;
+	height: 100px;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.card>.photo{
+	align-self: center;
+	background-color: var(--secondary-color, black);
+	width: 180px;
+	height: 180px;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+.showcase {
+	display: none;
+	max-height: 12em;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+}
+@supports (display: grid) {
+	.site {
+		grid-gap: var(--padding, 0px);
+	}
+	.header {
+		grid-area: header;
+	}
+	.showcase {
+		grid-area: showcase;
+	}
+	.main {
+		grid-area: main;
+	}
+	.footer {
+		grid-area: footer;
+	}
+	@media screen and (min-width: 400px) {
+		body {
+			font-size: 24px;
+		}
+		.showcase {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.showcase__content {
+			display: grid;
+			grid-gap: var(--padding);
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.showcase__content>div:first-child {
+			grid-row: 1 / span 2;
+			grid-column: 1 / span 3;
+			background-color: var(--complementary-color);
+		}
+		.item {
+			margin-bottom: 0px;
+		}
+		.main__content {
+			display: grid;
+			grid-gap: var(--padding);
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.site {
+			display: grid;
+			max-width: 1000px;
+			grid-template-rows: auto 12em 1fr auto;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		.navi{
+			display: none;
+		}
+	}
+	@media screen and (min-width: 400px) and (max-width: 600px) {
+		.site {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"header"
+				"showcase"
+				"main"
+				"footer";
+		}
+	}
+	@media screen and (min-width: 600px) {
+		.site {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"header header header"
+				"showcase showcase showcase"
+				"main main main"
+				"footer footer footer";
+		}
+	}
 }
