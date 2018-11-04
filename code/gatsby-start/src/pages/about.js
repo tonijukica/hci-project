@@ -3,7 +3,6 @@ import React from "react";
 
  export default () => (
      <Layout>
-         <h1>My first Gatsby app</h1>
-         <p>Hello, World!</p>
+         <h1>About</h1>
      </Layout>
  );
