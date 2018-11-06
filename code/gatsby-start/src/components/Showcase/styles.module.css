@@ -1,0 +1,10 @@
+.Showcase {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    border: 2px solid var(--main-color, black);
+    max-height: 12em;
+  }
