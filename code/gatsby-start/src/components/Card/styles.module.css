@@ -4,13 +4,13 @@
 	flex-direction: column;
 	border: 1px solid rgb(111, 152, 190);
 	width: 100%;
-	padding: var(--padding, 0px);
-	margin-top: var(--padding, 0px);
+	padding: 10px;
+	margin-top: 10px;
 	color: rgb(111, 152, 190);
 }
 .Card>p {
 	text-align: center;
-	padding-left: var(--padding, 0px);
+	padding-left: 10px;
 }
 .Photo {
 	align-self: center;

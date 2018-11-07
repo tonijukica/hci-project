@@ -7,14 +7,13 @@ import styles from "./styles.module.css";
 export default () => (
     <header className={styles.Header}>
         <Container className={styles.Container}>
-            <span className={styles.Logo}>Gatsby</span>
+        <span className={styles.Logo}><img src='./logo.png' alt ='logo'></img></span>
             <Nav>
                 <NavLink to="/" exact="true">Home</NavLink>
                 <NavLink to="/prices/">Prices</NavLink>
                 <NavLink to="/icos/">ICOs</NavLink>
                 <NavLink to="/news/">News</NavLink>
                 <NavLink to="/login/">Login</NavLink>
-
             </Nav>
         </Container>
     </header>

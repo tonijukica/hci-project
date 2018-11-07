@@ -6,5 +6,6 @@
     align-items: center;
     flex: 1;
     border: 2px solid var(--main-color, black);
+    height: 1000px;
     max-height: 12em;
   }
