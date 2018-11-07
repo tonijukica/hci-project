@@ -10,8 +10,11 @@ export default () => (
             <span className={styles.Logo}>Gatsby</span>
             <Nav>
                 <NavLink to="/" exact="true">Home</NavLink>
-                <NavLink to="/second-page/">Second page</NavLink>
-                <NavLink to="/about/">About</NavLink>
+                <NavLink to="/prices/">Prices</NavLink>
+                <NavLink to="/icos/">ICOs</NavLink>
+                <NavLink to="/news/">News</NavLink>
+                <NavLink to="/login/">Login</NavLink>
+
             </Nav>
         </Container>
     </header>
