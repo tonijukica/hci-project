@@ -8,7 +8,7 @@ import { Layout, NewsIndex } from "../components";
 }) => {
   return (
     <Layout>
-      <h1>News posts</h1>
+      <h1>Latest news</h1>
       <NewsIndex posts={posts} />
     </Layout>
   );
