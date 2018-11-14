@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 export default () => (
     <header className={styles.Header}>
         <Container className={styles.Container}>
-        <span className={styles.Logo}><img src='./logo.png' alt ='logo'></img></span>
+        <span><img src='./logo.png' alt ='logo' className={styles.Logo}></img></span>
             <Nav>
                 <NavLink to="/" exact="true">Home</NavLink>
                 <NavLink to="/prices/">Prices</NavLink>

@@ -1,0 +1,41 @@
+.SiteContainer {
+
+}
+.Header {
+
+}
+.Container {
+
+}
+.Footer {
+
+}
+@supports (display: grid) {
+    .SiteContainer {
+		grid-gap: 10px;
+	}
+	.Header {
+		grid-area: header;
+	}
+	.Container {
+		grid-area: container;
+	}
+	.Footer {
+		grid-area: footer;
+    }
+    .SiteContainer {
+        display: grid;
+        max-width: 1000px;
+        grid-template-rows: auto 12em 1fr auto;
+    }
+    @media screen and (min-width: 600px) {
+		.site {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"header header header"
+				"container container container"
+				"container  container container"
+				"footer footer footer";
+		}
+	}
+}
