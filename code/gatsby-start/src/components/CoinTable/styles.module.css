@@ -1,0 +1,16 @@
+.CoinTable {
+    max-width: 100%;
+    
+}
+th {
+    padding: 10px;
+}
+td {
+    padding: 10px;
+}
+thead tr {
+    border: 1px solid black;
+}
+tbody tr {
+    border: 10px solid black;
+}
