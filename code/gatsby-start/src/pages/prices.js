@@ -10,3 +10,5 @@ export default () => (
         </CoinTable>
     </Layout>
 );
+
+// query for pulling coin data query Coins {allPricesJson{edges{node{id market_data{current_price{usd} price_change_24h_in_currency{usd} market_cap{usd} total_volume{usd} }}}}}
