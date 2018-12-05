@@ -1,14 +1,19 @@
 import React from "react";
 import { Layout } from "../components";
 import { CoinTable } from '../components'
+import { graphql } from "gatsby";
 
-export default () => (
-    <Layout>
+export default ({ 
+    data: {
+        allPricesJson: { edges: coins }
+    } 
+}) => {
+    return (
+        <Layout>
         <h1>Prices</h1>
-        <CoinTable>
+        <CoinTable coins = {coins}/>
+        </Layout>
+    );
+};
 
-        </CoinTable>
-    </Layout>
-);
-
-// query for pulling coin data query Coins {allPricesJson{edges{node{id market_data{current_price{usd} price_change_24h_in_currency{usd} market_cap{usd} total_volume{usd} }}}}}
+export const query = graphql` query Coins {allPricesJson{edges{node{id market_data{current_price{usd} price_change_24h_in_currency{usd} market_cap{usd} total_volume{usd} }}}}}`;

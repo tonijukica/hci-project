@@ -15,5 +15,6 @@ import styles from "./styles.module.css";
       </section>
     );
   });
+  console.log(postsList);
    return postsList;
 };
