@@ -16,4 +16,4 @@ export default ({
     );
 };
 
-export const query = graphql` query Coins {allPricesJson{edges{node{id market_data{current_price{usd} price_change_24h_in_currency{usd} market_cap{usd} total_volume{usd} }}}}}`;
+export const query = graphql` query Coins {allPricesJson{edges{node{id name market_data{current_price{usd} price_change_24h_in_currency{usd} market_cap{usd} total_volume{usd} }}}}}`;

@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./styles.module.css";
+import Link from 'gatsby';
 
 export default({ coins }) => {
     const coinsList = coins.map(coin => {
     const id  = coin.node.id;
+    const name = coin.node.name;
     const current_price = coin.node.market_data.current_price.usd;
     const price_change_24h_in_currency = coin.node.market_data.price_change_24h_in_currency.usd;
     const market_cap = coin.node.market_data.market_cap.usd;
     const total_volume = coin.node.market_data.total_volume.usd;
     return (
         <tr key = { id }>
-            <td>{id}</td>
+            <td>{name}</td>
             <td>{current_price}</td>
             <td>{price_change_24h_in_currency}</td>
             <td>{total_volume}</td>
@@ -18,7 +20,6 @@ export default({ coins }) => {
         </tr>
         );
     });
-    console.log(coinsList);
     return (
     <table className = {styles.coinTable}>
         <thead>

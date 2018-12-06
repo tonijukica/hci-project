@@ -1,7 +1,7 @@
 const path = require("path");
  exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-   const postTemplate = path.resolve(`src/templates/news-post.js`);
+   const postTemplate = path.resolve(`src/templates/NewsPost/index.js`);
    return graphql(`
     {
       allMarkdownRemark {
