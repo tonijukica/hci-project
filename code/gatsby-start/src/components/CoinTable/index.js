@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import Link from 'gatsby';
+import { Link } from 'gatsby';
 
 export default({ coins }) => {
     const coinsList = coins.map(coin => {
@@ -12,11 +12,16 @@ export default({ coins }) => {
     const total_volume = coin.node.market_data.total_volume.usd;
     return (
         <tr key = { id }>
-            <td>{name}</td>
-            <td>{current_price}</td>
-            <td>{price_change_24h_in_currency}</td>
-            <td>{total_volume}</td>
-            <td>{market_cap}</td>
+                <td>
+                    <Link to={`coin/${id}`}>
+                        {name}
+                    </Link>
+                </td>
+                <td>{current_price}</td>
+                <td>{price_change_24h_in_currency}</td>
+                <td>{total_volume}</td>
+                <td>{market_cap}</td>
+            
         </tr>
         );
     });
@@ -24,21 +29,21 @@ export default({ coins }) => {
     <table className = {styles.coinTable}>
         <thead>
             <tr>
-                <th className = {styles.coinName}>
-                    Name
-                </th>
-                <th className = {styles.coinPrice}>
-                    Price
-                </th>
-                <th className = {styles.coinChange}>
-                    Daily change
-                </th>
-                <th className = {styles.coinVolume}>
-                    Volume
-                </th>
-                <th className = {styles.coinMarketCap}>
-                    Market cap
-                </th>
+                    <th className = {styles.coinName}>
+                        Name
+                    </th>
+                    <th className = {styles.coinPrice}>
+                        Price
+                    </th>
+                    <th className = {styles.coinChange}>
+                        Daily change
+                    </th>
+                    <th className = {styles.coinVolume}>
+                        Volume
+                    </th>
+                    <th className = {styles.coinMarketCap}>
+                        Market cap
+                    </th>
             </tr>
         </thead>
         <tbody>

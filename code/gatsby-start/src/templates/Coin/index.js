@@ -4,9 +4,11 @@ import { Layout } from "../../components";
 import styles from "./styles.module.css";
 
 export default ({data}) => {
+  const { pricesJson: coin } = data;
     return (
         <Layout>
-            <h1>{data.id}</h1>
+            <h1 className={styles}>{coin.name}</h1>
+            <img src ={coin.image.large} alt={coin.name}></img>
         </Layout>
     );
 };
@@ -14,7 +16,10 @@ export default ({data}) => {
 
 
 
-export const query = graphql`query Coin($id: String!) {pricesJson( id: {eq: "bitcoin"}) {
+export const query = graphql`
+query Coin($id: String!) 
+{ 
+  pricesJson( id: {eq: $id}) {
     name
     image {
       large

@@ -2,6 +2,7 @@ const path = require("path");
  exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
    const postTemplate = path.resolve(`src/templates/NewsPost/index.js`);
+   const coinTemplate = path.resolve('src/templates/Coin/index.js');
    return graphql(`
     {
       allMarkdownRemark {
@@ -29,5 +30,30 @@ const path = require("path");
         }
       });
     });
+    return graphql(`
+      {
+        allPricesJson {
+          edges {
+            node{
+              id
+            }
+          }
+        }
+      }
+    `).then(result => {
+      if(result.errors)
+        console.log('prelosi si u gatsbyu')
+      result.data.allPricesJson.edges.forEach(({node}) => {
+        const { id } = node;
+        createPage({
+          path: '/coin/' + id, 
+          component: coinTemplate,
+          context: {
+            id
+          }
+        })
+      });
+    });
+
   });
 };

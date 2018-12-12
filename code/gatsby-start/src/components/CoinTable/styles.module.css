@@ -14,3 +14,6 @@ thead tr {
 tbody tr {
     border: 10px solid black;
 }
+a {
+    color: black;
+}
