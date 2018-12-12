@@ -34,5 +34,9 @@ module.exports = {
         path: `./content/prices`,
       },
     },
+    {
+      resolve: "gatsby-plugin-create-client-paths",
+      options: { prefixes: ["/private/*"] }
+    }
     ]
   };

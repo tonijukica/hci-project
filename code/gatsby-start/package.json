@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "fuse.js": "^3.3.0",
     "gatsby": "^2.0.34",
     "gatsby-link": "^2.0.6",
     "gatsby-plugin-sharp": "^2.0.10",
+    "gatsby-plugin-create-client-paths": "^2.0.3",
     "gatsby-react-router-scroll": "^2.0.1",
     "gatsby-remark-images": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.6",
@@ -20,6 +22,8 @@
     "gatsby-transformer-remark": "^2.1.11",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "slick-carousel": "^1.8.1",
+    "typography": "^0.16.18"
   }
 }
