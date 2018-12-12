@@ -1,5 +1,4 @@
 # hci-project
-![alt text](https://i.redd.it/9b3udzeexqs11.jpg)
 ![alt_text](https://scontent.fzag1-1.fna.fbcdn.net/v/t1.15752-9/48182305_2100238216954527_1847107396392976384_n.png?_nc_cat=107&_nc_ht=scontent.fzag1-1.fna&oh=1536a63adaacd112db1a22c7834455e6&oe=5CA2868D)
 #### Zahtjevi i zadaće
 
