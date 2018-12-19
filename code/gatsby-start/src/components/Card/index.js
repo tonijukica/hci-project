@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./styles.module.css";
 //test
-export default({ children }) => (
+export default({coinName, source}) => (
     <div className = { styles.Card }>
-            <div className = { styles.Photo }></div>
-            {children}
+            <img className = { styles.Photo } src={source} ></img>
+            <p>{coinName}</p>
     </div>
 );

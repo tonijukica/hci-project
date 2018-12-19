@@ -5,8 +5,6 @@
     padding-top: 20px;
 }
 .MainContainer{
-    color: var(--main-color, black);
-	border: 2px solid var(--main-color, black);
 	text-align: center;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -14,6 +12,10 @@
     grid-gap: 10px;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(3, 1fr);
+}
+.MainContainer a:hover {
+    border-bottom: 0px;
+    background: lightblue;
 }
 @media screen and (max-width: 400px) {
     
@@ -24,3 +26,4 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
