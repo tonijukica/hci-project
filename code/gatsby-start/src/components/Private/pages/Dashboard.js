@@ -1,7 +1,8 @@
 import React from "react";
-
+import  Layout  from '../../Layout/index.js'
 export default () => (
   <>
+  <Layout>
     <h1>Dashboard</h1>
     <p>
       <em>
@@ -13,5 +14,6 @@ export default () => (
       </em>{" "}
       - Wikipedia
     </p>
+    </Layout>  
   </>
 );

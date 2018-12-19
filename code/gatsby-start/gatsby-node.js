@@ -1,3 +1,4 @@
+//probat sa await i fetch, kasnije sa to module
 const path = require("path");
  exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;

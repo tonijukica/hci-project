@@ -29,7 +29,8 @@
     overflow-y: hidden;
   }
   
-  .NavLink {
+  .NavLink,
+  .PrivateLink {
     display: inline-block;
     padding: 5px 10px;
     margin-left: 10px;
@@ -53,3 +54,9 @@
     color:rgb(1, 134, 195);
     border-bottom: 3px solid rgb(1, 134, 195);
   }
+
+  .PrivateLink_active,
+  .PrivateLink:hover {
+    color: var(--color-gold, orange);
+    border-bottom: 3px solid var(--color-gold, orange);
+}

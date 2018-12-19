@@ -1,6 +1,7 @@
 import React from "react";
 import { PrivateRoute } from "components";
 import { Router } from "@reach/router";
+import { Layout } from "../components";
 import Login from "components/Private/Login";
 import Dashboard from "components/Private/pages/Dashboard.js";
 import Personal from "components/Private/pages/Personal.js";
@@ -29,11 +30,15 @@ const Logout = () => (
 export default () => (
   <>
     {isLoggedIn() ? (
-      <Logout />
+      <Layout>
+        <Logout/>
+      </Layout>
     ) : (
       <>
+      <Layout>
         <h1>Private</h1>
         <Login private="/private/dashboard" handleLogin={handleLogin} />
+        </Layout>
       </>
     )}
 
