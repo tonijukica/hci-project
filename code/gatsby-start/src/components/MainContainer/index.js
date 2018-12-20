@@ -10,8 +10,8 @@ export default() =>(
         	<Link to='coin/bitcoin'>
                 <Card coinName='Bitcoin' source='https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1510040391' />
             </Link>
-            <Link to='coin/etherium'>
-                <Card coinName='Etherium' source='https://assets.coingecko.com/coins/images/279/large/ethereum.png?1510040267' />
+            <Link to='coin/ethereum'>
+                <Card coinName='Ethereum' source='https://assets.coingecko.com/coins/images/279/large/ethereum.png?1510040267' />
             </Link>
             <Link to='coin/litecoin'>
                 <Card coinName='Litecoin' source='https://assets.coingecko.com/coins/images/2/large/litecoin.png?1510040295' />
