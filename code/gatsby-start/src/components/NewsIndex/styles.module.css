@@ -1,10 +1,28 @@
 .Post {
     padding-top: 2.5rem;
+    overflow: auto;
+    display: inline-block;
   }
-   .Excerpt {
-    padding: 0.5rem 0;
+   .Excerpt:hover {
+    color: gray;
   }
    .Date {
     font-weight: 400;
     color: var(--color-dark-grey, #000);
   }
+.newsContainer {
+  overflow: hidden;
+  text-overflow: hidden;
+}
+.newsThumb {
+  float: left;
+  width: 256px;
+  height: auto;;
+  padding-right: 0.5rem;
+  
+}
+
+
+.Title:hover {
+ color: rgb(1, 134, 195);
+}

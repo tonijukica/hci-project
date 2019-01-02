@@ -21,15 +21,6 @@
     position: relative;
   }
 
-  a {
-    color: rgb(1, 134, 195);
-    text-decoration: none;
-    outline: 0;
-  }
-  
-  a:hover {
-    border-bottom: 3px solid rgb(1, 134, 195);
-  }
   
   * {
     margin: 0;

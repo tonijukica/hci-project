@@ -2,6 +2,7 @@
 date: "2018-11-03"
 title: "Post 5"
 slug: post-five
+permalink: "https://digitalassetuniversity.com/wp-content/uploads/2017/12/bitcoin-to-moon-13.jpg"
 ---
 
 <!-- markdownlint-disable MD033 -->

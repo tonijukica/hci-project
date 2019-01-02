@@ -17,7 +17,7 @@
     border-bottom: 0px;
     background: lightblue;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     
     .MainContainer {
         display: grid;

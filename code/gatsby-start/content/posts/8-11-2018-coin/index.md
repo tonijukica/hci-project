@@ -2,6 +2,7 @@
 date: "2018-11-08"
 title: "Bitcoin to the MOOOON!"
 slug: bitcoin-moon
+permalink: "https://digitalassetuniversity.com/wp-content/uploads/2017/12/bitcoin-to-moon-13.jpg"
 ---
  <!-- markdownlint-disable MD033 -->
  # Bitcoin price

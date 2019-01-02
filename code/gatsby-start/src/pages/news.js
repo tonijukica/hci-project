@@ -23,6 +23,7 @@ import { Layout, NewsIndex } from "../components";
             title
             date
             slug
+            permalink
           }
           excerpt(pruneLength: 300)
         }

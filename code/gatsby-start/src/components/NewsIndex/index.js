@@ -4,17 +4,20 @@ import styles from "./styles.module.css";
  export default ({ posts }) => {
   const postsList = posts.map(post => {
     const { id, excerpt } = post.node;
-    const { title, date, slug } = post.node.frontmatter;
+    const { title, slug, permalink } = post.node.frontmatter;
     return (
+      <Link to={`news/${slug}`}>
       <section key={id} className={styles.Post}>
-        <h2 className={styles.Title}>
-          <Link to={`news/${slug}`}>{title}</Link>
-        </h2>
-        <p className={styles.Excerpt}>{excerpt}</p>
-        <span className={styles.Date}>{date}</span>
+        <img src={permalink} alt='' className={styles.newsThumb} />
+        <div className={styles.newsContainer}>
+          <h2 className={styles.Title}>
+            {title}
+          </h2>
+          <p className={styles.Excerpt}>{excerpt}</p>
+        </div>
       </section>
+      </Link>
     );
   });
-  console.log(postsList);
-   return postsList;
+  return postsList;
 };
