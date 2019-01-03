@@ -1,13 +1,14 @@
 import React from "react";
- import { Link } from "gatsby";
- import styles from "./styles.module.css";
+import { Link } from "gatsby";
+import styles from "./styles.module.css";
+import cn from "classnames";
 
- export default ({ children, ...rest }) => (
-     <Link
-         className={styles.NavLink}
-         activeClassName={styles.NavLink__active}
-         {...rest}
-     >
-         {children}
-     </Link>
- );
+export default ({ children, className, activeClassName, ...rest }) => (
+  <Link
+    className={cn(styles.NavLink, className)}
+    activeClassName={activeClassName ? activeClassName : styles.NavLink_active}
+    {...rest}
+  >
+    {children}
+  </Link>
+);

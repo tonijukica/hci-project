@@ -42,7 +42,6 @@ const path = require("path");
         }
       }
     `).then(result => {
-      if(result.errors)
       result.data.allPricesJson.edges.forEach(({node}) => {
         const { id } = node;
         createPage({

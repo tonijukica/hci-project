@@ -17,7 +17,8 @@ export default [
     },
     {
       text: "Login",
-      path: "/private"
+      path: "/private",
+      login: true
     },
     // Private routes
     {
