@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 import navLinks from "config/menu.js";
 import { PrivateRoute } from "components";
 import logo from './logo.png'
+import { isLoggedIn } from '../../../services/auth/auth';
 
 export default () => {
   const nav = navLinks.map(link => {
@@ -27,6 +28,8 @@ export default () => {
         />
       );
     }
+    if(isLoggedIn() && link.login)
+      return null;
 
     return (
       <NavLink key={link.path} to={link.path}>
