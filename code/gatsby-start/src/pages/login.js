@@ -10,7 +10,7 @@ import {
   isLoggedIn
 } from "services/auth/auth.js";
 import { navigate } from "gatsby";
-import styles from "styles/pages/private.module.css";
+//import styles from "styles/pages/private.module.css";
 
 const Logout = () => (
   <a
@@ -18,9 +18,9 @@ const Logout = () => (
     onClick={event => {
       event.preventDefault();
       handleLogout();
-      navigate("/private");
+      navigate("/login");
     }}
-    className={styles.Logout}
+    //className={styles.Logout}
   >
     Logout
   </a>
@@ -32,7 +32,7 @@ export default () => (
       <Logout />
     ) : (
       <>
-        <h1>Private</h1>
+        <h1>Login</h1>
         <Login private="/private/dashboard" handleLogin={handleLogin} />
       </>
     )}
@@ -41,13 +41,13 @@ export default () => (
       <PrivateRoute
         path="/private/dashboard"
         render={Dashboard}
-        redirect={"/private"}
+        redirect={"/login"}
       />
 
       <PrivateRoute
         path="/private/personal"
         render={Personal}
-        redirect={"/private"}
+        redirect={"/login"}
       />
     </Router>
   </>

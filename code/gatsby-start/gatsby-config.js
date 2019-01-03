@@ -35,6 +35,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout/index.js`)
+      }
+    },
+    {
       resolve: "gatsby-plugin-create-client-paths",
       options: { prefixes: ["/private/*"] }
     }

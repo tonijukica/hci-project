@@ -1,5 +1,4 @@
 import React from "react";
-import { Layout } from "../components";
 import { CoinTable } from '../components'
 import { graphql } from "gatsby";
 
@@ -9,10 +8,10 @@ export default ({
     } 
 }) => {
     return (
-        <Layout>
+        <>
         <h1>Prices</h1>
         <CoinTable coins = {coins}/>
-        </Layout>
+        </>
     );
 };
 

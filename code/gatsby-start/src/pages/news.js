@@ -1,16 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout, NewsIndex } from "../components";
+import { NewsIndex } from "../components";
  export default ({
   data: {
     allMarkdownRemark: { edges: posts } // Rename edges to posts
   }
 }) => {
   return (
-    <Layout>
+    <>
       <h1>Latest news</h1>
       <NewsIndex posts={posts} />
-    </Layout>
+    </>
   );
 };
  export const query = graphql`
