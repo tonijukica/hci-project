@@ -43,7 +43,6 @@ const path = require("path");
       }
     `).then(result => {
       if(result.errors)
-        console.log('prelosi si u gatsbyu')
       result.data.allPricesJson.edges.forEach(({node}) => {
         const { id } = node;
         createPage({
