@@ -1,9 +1,9 @@
 import React from "react";
  import styles from './styles.module.css';
- import SiteContainer from "../SiteContainer";
- import Header from "../Header";
- import Footer from '../Footer';
- import Main from '../Main';
+ import SiteContainer from "./SiteContainer";
+ import Header from "./Header";
+ import Footer from './Footer';
+ import Main from './Main';
  // eslint-disable-next-line
  import _ from "../../styles/index.css";
 
