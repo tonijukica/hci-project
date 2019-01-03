@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./styles.module.css";
 import { Link } from 'gatsby';
 import Fuse from 'fuse.js';
+import currencyFormatter from 'currency-formatter';
 
 class FilteredCoins extends Component {
     state = {
@@ -35,10 +36,10 @@ class FilteredCoins extends Component {
             const id = data.node.id;
             const name = data.node.name;
             const current_price = data.node.market_data.current_price.usd;
-            const price_change_24h_in_currency = data.node.market_data.price_change_24h_in_currency.usd;
+            const price_change_24h = data.node.market_data.price_change_percentage_24h;
             const market_cap = data.node.market_data.market_cap.usd;
             const total_volume = data.node.market_data.total_volume.usd;
-
+            
             return (
                 <tr key = { id }>
                     <td>
@@ -46,10 +47,10 @@ class FilteredCoins extends Component {
                             {name}
                         </Link>
                     </td>
-                    <td>{current_price}</td>
-                    <td>{price_change_24h_in_currency}</td>
-                    <td>{total_volume}</td>
-                    <td>{market_cap}</td>
+                    <td>{currencyFormatter.format(Math.round(current_price * 100) / 100,{code: 'USD'})}</td>
+                    <td>{Math.round(price_change_24h * 100) / 100}%</td>
+                    <td>{currencyFormatter.format(total_volume,{code: 'USD'})}</td>
+                    <td>{currencyFormatter.format(market_cap ,{code: 'USD'})}</td>
                 </tr>
             );
         });
