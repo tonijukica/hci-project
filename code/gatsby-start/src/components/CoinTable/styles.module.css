@@ -1,4 +1,4 @@
-.CoinTable {
+.coinTable {
     max-width: 100%;
     
 }
@@ -18,3 +18,26 @@ a {
     color: black;
 }
 
+.coinName {
+
+}
+.coinPrice {
+    
+
+}
+.coinChange {
+
+}
+.coinVolume {
+
+}
+.coinMarketCap {
+
+}
+@media screen and (max-width: 450px) {
+    
+    .coinChange, .coinVolume, .coinMarketCap {
+        display: none;
+    }
+    
+}

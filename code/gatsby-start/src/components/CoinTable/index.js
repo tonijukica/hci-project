@@ -41,17 +41,28 @@ class FilteredCoins extends Component {
             const total_volume = data.node.market_data.total_volume.usd;
             
             return (
-                <tr key = { id }>
-                    <td>
-                        <Link to={`coin/${id}`}>
-                            {name}
-                        </Link>
-                    </td>
-                    <td>{currencyFormatter.format(Math.round(current_price * 100) / 100,{code: 'USD'})}</td>
-                    <td>{Math.round(price_change_24h * 100) / 100}%</td>
-                    <td>{currencyFormatter.format(total_volume,{code: 'USD'})}</td>
-                    <td>{currencyFormatter.format(market_cap ,{code: 'USD'})}</td>
-                </tr>
+                  
+                    <tr key = { id }>
+                        <td className = {styles.coinName}>
+                            <Link to={`coin/${id}`}> 
+                                {name}
+                            </Link>
+                        </td>
+                        <td className = {styles.coinPrice}>
+                            <Link to={`coin/${id}`}>
+                                {currencyFormatter.format(Math.round(current_price * 100) / 100,{code: 'USD'})}
+                            </Link>
+                        </td>
+                        <td className = {styles.coinChange}>{Math.round(price_change_24h * 100) / 100}%</td>
+                        <td className = {styles.coinVolume}>
+                            <Link to={`coin/${id}`}> 
+                                {currencyFormatter.format(total_volume,{code: 'USD'})}
+                            </Link>
+                        </td>
+                        <td className = {styles.coinMarketCap}>{currencyFormatter.format(market_cap ,{code: 'USD'})}</td>
+                        
+                    </tr>
+               
             );
         });
         return (

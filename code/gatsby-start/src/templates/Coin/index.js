@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
-import { Layout } from "../../components";
 import styles from "./styles.module.css";
 
 class coin extends Component {
@@ -52,7 +51,7 @@ class coin extends Component {
   render() {
     const { pricesJson: coin } = this.props.data;
     return (
-        <Layout>
+        <>
             <h1>{coin.name}</h1>
             <img className={styles.coinImage} src ={coin.image.large} alt={coin.name}></img>
             <div className={styles.infoBox}>
@@ -99,7 +98,7 @@ class coin extends Component {
                 {this.state.ath}
               </div>
             </div>
-        </Layout>
+        </>
     );
   }
 } 
