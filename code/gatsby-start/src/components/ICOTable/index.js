@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import style from './styles.module.css';
 
 class ICOTable extends Component {
     constructor(props) {
@@ -27,32 +28,32 @@ class ICOTable extends Component {
 
             return (
                 <tr key = { id }>
-                    <td>
+                    <td className = {style.icoName}>
                         <a href={url}>
                             {name}
                         </a>
                     </td>
-                    <td>{category}</td>
-                    <td>{status}</td>
-                    <td>{platform}</td>
+                    <td className = {style.icoCategory}>{category}</td>
+                    <td className = {style.icoStatus}>{status}</td>
+                    <td className = {style.icoPlatform}>{platform}</td>
                 </tr>
             );
         })
        return (
             <div>
-            <table>
+            <table className = {style.icoTable}>
                 <thead>
                     <tr>
-                        <th >
+                        <th className = {style.icoName}>
                             Name
                         </th>
-                        <th >
+                        <th className = {style.icoCategory}>
                             Category
                         </th>
-                        <th >
+                        <th className = {style.icoStatus}>
                             Status
                         </th>
-                        <th >
+                        <th className = {style.icoPlatform}>
                             Platform
                         </th>
                     </tr>

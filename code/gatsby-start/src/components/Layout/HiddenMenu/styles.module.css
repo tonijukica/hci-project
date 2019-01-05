@@ -1,0 +1,54 @@
+.Menu {
+    height: 100%;
+    width: 200px;
+  
+    background-color: #fff;
+  
+    position: center;
+  
+    display: block;
+    
+  }
+  
+  .Menu.open {
+  height: 200px;
+  width: 100px;
+  opacity: 1.0;
+  box-sizing: border-box;
+  transition: height 500ms 0ms, opacity 500ms 500ms;
+  }
+  
+  .Menu.closed {
+    width: 100px;
+    transition: height 500ms 500ms, opacity 500ms 0ms;
+    opacity: 0.0;
+    height: 0px;
+    
+  }
+  
+  .NavLink,
+  .PrivateLink {
+    border-left: 3px solid transparent;
+    border-top: none;
+    border-bottom: none !important;
+    margin-bottom: 2px;
+  }
+  
+  .NavLink_active,
+  .NavLink:hover {
+    color: rgb(1, 134, 195);
+    border-left: 3px solid rgb(1, 134, 195);
+  }
+  
+  .PrivateLink_active,
+  .PrivateLink:hover {
+    color: rgb(1, 134, 195);
+    border-left: 3px solid rgb(1, 134, 195);
+  }
+  
+  /* You can use a CSS preprocessor to store breakpoint values in variables. */
+  @media only screen and (min-width: 450px) {
+    .Menu {
+      display: none;
+    }
+  }

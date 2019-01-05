@@ -7,3 +7,5 @@ export { default as NewsIndex } from "./NewsIndex";
 export { default as CoinTable } from './CoinTable';
 export { default as PrivateRoute } from "components/Private/PrivateRouter.js";
 export { default as ICOTable } from './ICOTable';
+export { default as Nav } from "components/Layout/Header/Nav";
+export { default as NavLink } from "components/Layout/Header/NavLink";
