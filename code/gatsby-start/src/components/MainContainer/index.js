@@ -24,9 +24,7 @@ export default() =>(
             </Link>
             <Link to='coin/dash'>
                 <Card coinName='Dash' source='https://assets.coingecko.com/coins/images/19/large/dash.png?1541989751'/>
-            </Link>
-            
-            
+            </Link>  
         </div>
     </div>
 );

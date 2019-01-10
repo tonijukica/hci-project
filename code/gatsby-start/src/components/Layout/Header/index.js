@@ -9,7 +9,7 @@ import { PrivateRoute } from "components";
 import logo from './logo.png'
 import { isLoggedIn } from '../../../services/auth/auth';
 
-export default () => {
+export default ({ children }) => {
   const nav = navLinks.map(link => {
     if (link.private) {
       return (
@@ -46,6 +46,7 @@ export default () => {
         </Link>
         <Nav>{nav}</Nav>
       </Container>
+      {children}
     </header>
   );
 };

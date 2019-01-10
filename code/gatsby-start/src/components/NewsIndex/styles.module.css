@@ -13,9 +13,9 @@
 .newsContainer {
   overflow: hidden;
   text-overflow: hidden;
+  clear: right;
 }
 .newsThumb {
-  float: left;
   width: 256px;
   height: auto;;
   padding-right: 0.5rem;
@@ -25,4 +25,12 @@
 
 .Title:hover {
  color: rgb(1, 134, 195);
+}
+
+@media screen and (max-width: 450px) {
+    
+  .newsThumb {
+    display: none;
+  }
+  
 }

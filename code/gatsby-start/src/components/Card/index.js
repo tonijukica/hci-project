@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./styles.module.css";
-//test
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 export default({coinName, source}) => (
     <div className = { styles.Card }>
-            <img className = { styles.Photo } src={source} alt='' ></img>
+            <LazyLoadImage className = { styles.Photo } src={source} alt='' effect = 'blur'></LazyLoadImage>
             <p>{coinName}</p>
     </div>
 );

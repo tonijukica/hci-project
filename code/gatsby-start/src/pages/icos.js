@@ -3,7 +3,7 @@ import { ICOTable } from "../components";
 
  export default () => (
      <>
-         <h1>ICOs</h1>
+         <h1>Initial Coin Offering</h1>
          <ICOTable />
      </>
  );
