@@ -17,6 +17,10 @@
 	height: 100px;
 	flex-grow: 0;
 	flex-shrink: 0;
+	transition: transform .2s;
+}
+.Photo hover {
+	transform: scale(1.5);
 }
 .Card>.Photo{
 	align-self: center;
@@ -25,21 +29,4 @@
     height: 150px;
     flex-grow: 0;
 	flex-shrink: 0;
-}
-.coinName {
-
-}
-
-.coinPrice {
-
-}
-
-.coinChange {
-
-}
-.coinVolume {
-
-}
-.coinMarketCap {
-	
 }

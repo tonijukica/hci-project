@@ -8,26 +8,26 @@ export default class LazyLoad extends React.Component {
     render() {
       const settings = {
         dots: true,
-        lazyLoad: false,
+        lazyLoad: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 2,
+        initialSlide: 0,
         autoplay: true,
 
       };
       return (
         <div className={styles.Showcase}>  
-          <Slider {...settings}>
-            <div>
-              <img src='https://news.bitzamp.com/wp-content/uploads/2017/11/Cryptocurrencies-1.jpg' alt='' />
+          <Slider {...settings} className = {styles.Slider}>
+            <div className = {styles.image}>
+              <img src='https://ethereumworldnews.com/wp-content/uploads/2017/06/Cryptocurrency.png' alt=''/>
             </div>
-            <div>
-              <img src='https://ripplecoinnews.com/wp-content/uploads/2018/07/Cryptocurrency-market-moon.jpg' alt='' />
+            <div className = {styles.image}>
+              <img src='https://cdn-images-1.medium.com/max/1600/1*RZde6Zr-f7WKnrCYqaBm1g.jpeg' alt='' />
             </div>
-            <div>
-              <img src='https://www.incimages.com/uploaded_files/image/970x450/getty_876941262_2000150020009280128_341984.jpg' alt='' />
+            <div className = {styles.image}>
+              <img src='http://www.adampolinak.com/wp-content/uploads/2018/08/cryptocurrency-l%C3%A0-g%C3%AC.jpg' alt='' />
             </div>
           </Slider>
         </div>
