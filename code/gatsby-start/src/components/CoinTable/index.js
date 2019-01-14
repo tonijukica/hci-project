@@ -88,8 +88,7 @@ class FilteredCoins extends Component {
                         />
                     </label>
                 </div>
-                <div>
-                    <table className = {styles.coinTable}>
+                <table className = {styles.coinTable}>
                         <thead>
                             <tr>
                                 <th className = {styles.coinName}>
@@ -112,8 +111,7 @@ class FilteredCoins extends Component {
                         <tbody>
                             {coinsList}
                         </tbody>
-                    </table>
-                </div>
+                </table>
             </>
         );
 

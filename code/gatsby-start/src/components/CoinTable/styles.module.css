@@ -1,18 +1,23 @@
 .coinTable {
-    max-width: 100%;
+    width: 100%;
+    align-self: center;
     
 }
 th {
     padding: 10px;
+    text-align: center;
 }
 td {
     padding: 10px;
+    text-align: center;
 }
-thead tr {
-    border: 1px solid black;
+thead  {
+    border: 3px solid purple;
+    text-align: center;
 }
 tbody tr {
     border: 10px solid black;
+    text-align: center;
 }
 a {
     color: black;
