@@ -1,5 +1,17 @@
 .icoTable {
-    max-width: 100%;
+    width: 100%;
+    align-self: center;
+    border-collapse: collapse;
+    margin: auto;
+}
+.Loader {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100px;
+    padding: 20px;
 }
 th {
     padding: 10px;
@@ -7,26 +19,37 @@ th {
 td {
     padding: 10px;
 }
-thead tr {
-    border: 1px solid black;
-}
-tbody tr {
-    border: 10px solid black;
-}
 a {
     color: black;
 }
 .icoName {
+    border-bottom: 1px solid lightgray;
+    text-align: left;
+    max-width: auto;
 
 }
 .icoStatus {
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 30%
 
 }
 .icoCategory {
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 30%
+    
 
 }
 .icoPlatform {
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 30%
     
+    
+}
+.icoName a:hover {
+    border-bottom: 2px solid rgb(1, 134, 195);
 }
 @media screen and (max-width: 450px) {
     

@@ -3,10 +3,12 @@ import styles from "./styles.module.css";
 import { Link } from 'gatsby';
 import Fuse from 'fuse.js';
 import currencyFormatter from 'currency-formatter';
+import Lodash from 'lodash';
 
 class FilteredCoins extends Component {
     state = {
-        search: ""
+        search: "",
+        sortName: false
     };
 
     constructor(props) {
@@ -22,12 +24,12 @@ class FilteredCoins extends Component {
         };
         this.fuse = new Fuse(props.coins, options);
     }
-
+    onChange = event => this.setState({ search: event.target.value });
     render() {
         const { coins } = this.props;
         const { search } = this.state;
 
-        let searchResults = coins;
+        let searchResults = Lodash.orderBy(coins,['node.market_data.market_cap.usd'], ['desc']);
 
         if(search.length > 0) {
             searchResults = this.fuse.search(search);
@@ -53,7 +55,7 @@ class FilteredCoins extends Component {
                                 {currencyFormatter.format(Math.round(current_price * 100) / 100,{code: 'USD'})}
                             </Link>
                         </td>
-                        <td className = {styles.coinChange}>{Math.round(price_change_24h * 100) / 100}%</td>
+                        <td className = {price_change_24h>0 ? styles.coinChange_green : styles.coinChange_red}>{Math.round(price_change_24h * 100) / 100}%</td>
                         <td className = {styles.coinVolume}>
                             <Link to={`coin/${id}`}> 
                                 {currencyFormatter.format(total_volume,{code: 'USD'})}
@@ -67,26 +69,16 @@ class FilteredCoins extends Component {
         });
         return (
             <>
-                <div
-                    style={{
-                        display: "flex",
-                        paddingTop: "1rem",
-                        marginBottom: "1rem",
-                        borderBottom: "1px solid var(--color-grey)"
-                    }}
-                >
-                    <label
-                        className={styles.Label}
-                        style={{ position: "relative", marginLeft: "auto" }}
-                    >
+                <div className={styles.InputContainer}>
+                    <label className={styles.Label}>
                         <input
                             className={styles.Input}
                             type="search"
                             value={this.state.search}
-                            onChange={e => this.setState({ search: e.target.value })}
+                            onChange={this.onChange}
                             placeholder="Search coins"
                         />
-                    </label>
+                    </label>  
                 </div>
                 <table className = {styles.coinTable}>
                         <thead>

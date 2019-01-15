@@ -1,6 +1,7 @@
 .coinTable {
     width: 100%;
     align-self: center;
+    border-collapse: collapse;
     
 }
 th {
@@ -11,37 +12,92 @@ td {
     padding: 10px;
     text-align: center;
 }
-thead  {
-    border: 3px solid purple;
-    text-align: center;
-}
-tbody tr {
-    border: 10px solid black;
-    text-align: center;
-}
 a {
     color: black;
 }
 
 .coinName {
-
+    border-bottom: 1px solid lightgray;
+    text-align: left;
+    width: 20%;
 }
 .coinPrice {
-    
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 20%;
 
 }
+.coinTable a:hover {
+     border-bottom: 2px solid rgb(1, 134, 195);
+}
 .coinChange {
+    text-align: right;
+    border-bottom: 1px solid lightgray;
+    width: 20%;
+}
+
+.coinChange_red {
+    color: red;
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 20%;
+
+}
+
+.coinChange_green {
+    color: green;
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 20%;
 
 }
 .coinVolume {
 
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 20%;
 }
 .coinMarketCap {
+    border-bottom: 1px solid lightgray;
+    text-align: right;
+    width: 20%;
 
 }
+.Input {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.8rem;
+    overflow: hidden;
+    border-width: 0;
+    color: rgb(1, 134, 195);
+    font-weight: 600;
+  }
+  
+  .Input:focus {
+    outline: none;
+    background: var(--color-grey);
+  }
+  
+  .InputContainer {
+    display: flex;
+  }
+  .Label {
+    position: relative;
+    margin-left: auto;
+  }
+  .SearchIcon {
+    fill: rgb(1, 134, 195);
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
 @media screen and (max-width: 450px) {
     
-    .coinChange, .coinVolume, .coinMarketCap {
+    .coinChange, .coinVolume, .coinMarketCap, .coinChange_green, .coinChange_red {
         display: none;
     }
     

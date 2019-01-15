@@ -16,6 +16,7 @@
   opacity: 1.0;
   box-sizing: border-box;
   transition: height 500ms 0ms, opacity 500ms 500ms;
+  z-index: 1000;
   }
   
   .Menu.closed {
@@ -23,6 +24,7 @@
     transition: height 500ms 500ms, opacity 500ms 0ms;
     opacity: 0.0;
     height: 0px;
+    z-index: -1;
     
   }
   

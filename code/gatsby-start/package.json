@@ -3,7 +3,7 @@
   "description": "Gatsby hello world starter",
   "license": "MIT",
   "scripts": {
-    "develop": "./node_modules/.bin/rimraf .cache/* ./public/* && node ./content/prices/getPrices.js && gatsby develop",
+    "develop": "./node_modules/.bin/rimraf .cache/* ./public/* && cd content/prices && node getPrices.js && cd ../../ && gatsby develop",
     "start": "npm run develop",
     "build": "./node_modules/.bin/rimraf .cache/* ./public/* && gatsby build --prefix-paths",
     "serve": "gatsby serve"
@@ -22,11 +22,13 @@
     "gatsby-source-filesystem": "^2.0.6",
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-remark": "^2.1.11",
+    "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-lazy-load-image-component": "^1.2.1",
     "react-slick": "^0.23.2",
+    "react-spinners": "^0.5.1",
     "rimraf": "^2.6.2",
     "slick-carousel": "^1.8.1",
     "typography": "^0.16.18"
