@@ -1,9 +1,28 @@
-.coinImage {
-    max-width: 250px;
-    width: 100%;
+.view{
+    display: flex;
 }
 .infoBox {
-
+    flex: 30%;
+}
+.priceBox{
+    flex: 60%;
+}
+.coinImage {
+    max-width: 100%;
+    width: 100%;
+}
+.coinName{
+    text-align: center;
+}
+.Loader {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto;
+    margin-top: 200px;
+    margin-right: auto; 
+    width: 100px;
+    padding: 20px;
 }
 .currentPrice {
 

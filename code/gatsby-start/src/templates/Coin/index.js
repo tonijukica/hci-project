@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import styles from "./styles.module.css";
+import FadeLoader from 'react-spinners/FadeLoader';
+import currencyFormatter from 'currency-formatter';
 
 class coin extends Component {
   constructor(props) {
@@ -16,10 +18,13 @@ class coin extends Component {
       priceChange30dPercentage: null,
       priceChange1yPercentage: null,
       totalVolume: null,
-      sparkLine7d: null
+      sparkLine7d: null,
+      homePage: null,
+      isLoading: false
     }
   }
   componentDidMount() {
+    this.setState({isLoading: true});
     this.getData = () => {
       fetch('https://api.coingecko.com/api/v3/coins/'+this.props.data.pricesJson.id+'?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true')
         .then(response => response.json())
@@ -35,8 +40,10 @@ class coin extends Component {
             priceChange30dPercentage: data.market_data.price_change_percentage_30d,
             priceChange1yPercentage: data.market_data.price_change_percentage_1y,
             totalVolume: data.market_data.total_volume.usd,
-            sparkLine7d: data.market_data.sparkline_7d.price
+            sparkLine7d: data.market_data.sparkline_7d.price,
+            homePage: data.links.homepage[0]
           });
+          this.setState({isLoading: false});
         })
         .catch((e) => {
           console.log(e);
@@ -50,56 +57,86 @@ class coin extends Component {
   }
   render() {
     const { pricesJson: coin } = this.props.data;
-    return (
-        <>
-            <h1>{coin.name}</h1>
-            <img className={styles.coinImage} src ={coin.image.large} alt={coin.name}></img>
-            <div className={styles.infoBox}>
-              <div className={styles.currentPrice}>
-                <h2>Current price</h2>
-                {this.state.currentPrice}
-              </div>
-              <div className={styles.marketCap}>
-                <h2>Market cap</h2>
-                {this.state.marketCap}
-              </div>
-              
-              <div className={styles.totalVolume}>
-                <h2>Total volume</h2>
-                {this.state.totalVolume}
-              </div>
-              
-              <div className={styles.dailyChange}>
-                <h2>Daily change</h2>
-                {this.state.priceChange24hPercentage}
-              </div>
-              
-              <div className={styles.weeklyChange}>
-                <h2>Weekly change</h2>
-                {this.state.priceChange7dPercentage}
-              </div>
-              
-              <div className={styles.monthlyChange}>
-                <h2>Monthly change</h2>
-                {this.state.priceChange30dPercentage}
-              </div>
-              
-              <div className={styles.yearlyChange}>
-                <h2>Yearly change</h2>
-                {this.state.priceChange1yPercentage}
-              </div>
-              
-              <div className={styles.dailyChangeCurrency}>
-                <h2>Daily change in currency </h2>
-                {this.state.priceChange24hCurrency}
-              </div>
-              <div className={styles.ath}>
-                <h2>All time high</h2>
-                {this.state.ath}
-              </div>
-            </div>
-        </>
+    const { isLoading } = this.state;
+    if(isLoading)
+    {
+      return ( 
+        <div className = {styles.Loader}>
+          <FadeLoader
+              loading = {isLoading}
+              sizeUnit = {'px'}
+              size = {'150'}
+              color = {'#2E86C3'}
+          />
+        </div>
     );
+    }
+    else {
+      return (
+          <>
+              <h1>{coin.name} Price</h1>
+              <div className = {styles.view}>
+                <div className = {styles.infoBox} >
+                  <img className={styles.coinImage} src ={coin.image.large} alt={coin.name}></img>
+                  <div className = {styles.coinName}>
+                    {coin.name}
+                    <br/>
+                    {this.state.homePage}
+                  </div>
+                </div>
+                <div className={styles.priceBox}>
+                  <div className={styles.currentPrice}>
+                    Current price
+                    <h2>{currencyFormatter.format(Math.round(this.state.currentPrice * 100) / 100,{code: 'USD'})}</h2>
+                  </div>
+                  <div className={styles.marketCap}>
+                    Market cap
+                    <h2>{currencyFormatter.format(Math.round(this.state.marketCap * 100) / 100,{code: 'USD'})}</h2>
+                  </div>
+                  <div className={styles.totalVolume}>
+                    Total volume
+                    <h2>{currencyFormatter.format(Math.round(this.state.totalVolume * 100) / 100,{code: 'USD'})}</h2>
+                  </div>
+                  
+                  <div className={styles.dailyChange}>
+                    Daily change
+                    <h2>{Math.round(this.state.priceChange24hPercentage * 100) / 100}%</h2>
+                    
+                  </div>
+                  
+                  <div className={styles.weeklyChange}>
+                    Weekly change
+                    <h2>{Math.round(this.state.priceChange7dPercentage * 100) / 100}%</h2>
+                    
+                  </div>
+                  
+                  <div className={styles.monthlyChange}>
+                    Monthly change
+                    <h2>{Math.round(this.state.priceChange30dPercentage * 100) / 100}%</h2>
+                    
+                  </div>
+                  
+                  <div className={styles.yearlyChange}>
+                    Yearly change
+                    <h2>{Math.round(this.state.priceChange1yPercentage * 100) / 100}%</h2>
+                    
+                  </div>
+                  
+                  <div className={styles.dailyChangeCurrency}>
+                    Daily change in currency 
+                    <h2>{currencyFormatter.format(Math.round(this.state.priceChange24hCurrency * 100) / 100,{code: 'USD'})}</h2>
+                    
+                  </div>
+                  <div className={styles.ath}>
+                    All time high
+                    <h2>{currencyFormatter.format(Math.round(this.state.ath* 100) / 100,{code: 'USD'})}</h2>
+                    
+                  </div>
+                </div>
+              </div>
+          </>
+      );
+    }
   }
 } 
 /*export default ({data}) => {
