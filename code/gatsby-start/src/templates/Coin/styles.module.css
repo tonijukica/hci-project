@@ -1,18 +1,51 @@
 .view{
     display: flex;
+    margin-top: 20px;   
+}
+.view a:hover {
+    border-bottom: 2px solid rgb(1, 134, 195);
+}
+.Title {
+    text-align: center;
 }
 .infoBox {
     flex: 30%;
+    padding: 10px;
+    margin: 10px;
 }
 .priceBox{
+    padding: 10px;
+    margin: 10px;
     flex: 60%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+.firstRow{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    height: 100px;
+}
+.secondRow{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    height: 100px;
+}
+.thirdRow{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    height: 100px;
 }
 .coinImage {
-    max-width: 100%;
+    max-width: 256px;
+    max-height: 256px;
     width: 100%;
 }
 .coinName{
     text-align: center;
+    max-width: 256px;
 }
 .Loader {
     position: absolute; 
@@ -25,29 +58,65 @@
     padding: 20px;
 }
 .currentPrice {
+    text-align: center;
 
 }
 .marketCap {
+    text-align: center;
 
 }
 .totalVolume {
+    text-align: center;
 
 }
 .dailyChange {
+    text-align: center;
 
 }
 .weeklyChange {
+    text-align: center;
 
 }
 .monthlyChange {
+    text-align: center;
 
 }
 .yearlyChange {
+    text-align: center;
 
 }
 .dailyChangeCurrency {
+    text-align: center;
 
 }
 .ath {
+    text-align: center;
 
 }
+.falling {
+    color: red
+}
+.rising {
+    color: green;
+}
+
+@media screen and (max-width: 450px) {
+    
+    .view  {
+        display: block;
+    }
+    .priceBox {
+        max-width: 450px;
+        display: block;
+    }
+    .coinName {
+        text-align: auto;
+    }
+
+    .firstRow,.secondRow,.thirdRow {
+        display: block;
+        height: auto;
+        padding-bottom: 15px;
+    }
+}
+

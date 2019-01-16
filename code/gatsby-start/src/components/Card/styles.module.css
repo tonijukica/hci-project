@@ -6,6 +6,7 @@
 	padding: 10px;
 	margin-top: 10px;
 	color: rgb(111, 152, 190);
+	border: 1px solid lightgray;
 }
 .Card>p {
 	text-align: center;
@@ -19,9 +20,13 @@
 	flex-shrink: 0;
 	transition: transform .2s;
 }
-.Photo hover {
-	transform: scale(1.5);
+.Card:hover {
+	background-color: lightgray;
 }
+.Card:hover>.Photo {
+		transform: scale(1.1);
+	}
+
 .Card>.Photo{
 	align-self: center;
 	width: 100%;

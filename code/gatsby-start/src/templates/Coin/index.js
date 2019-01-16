@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 import FadeLoader from 'react-spinners/FadeLoader';
 import currencyFormatter from 'currency-formatter';
 
+
 class coin extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,6 @@ class coin extends Component {
       ath_date: null,
       currentPrice: null,
       marketCap: null,
-      priceChange24hCurrency: null,
       priceChange24hPercentage: null,
       priceChange7dPercentage: null,
       priceChange30dPercentage: null,
@@ -34,7 +34,6 @@ class coin extends Component {
             ath_date: data.market_data.ath_date.usd,
             currentPrice: data.market_data.current_price.usd,
             marketCap: data.market_data.market_cap.usd,
-            priceChange24hCurrency: data.market_data.price_change_24h_in_currency.usd,
             priceChange24hPercentage: data.market_data.price_change_percentage_24h,
             priceChange7dPercentage: data.market_data.price_change_percentage_7d,
             priceChange30dPercentage: data.market_data.price_change_percentage_30d,
@@ -74,64 +73,60 @@ class coin extends Component {
     else {
       return (
           <>
-              <h1>{coin.name} Price</h1>
+              
               <div className = {styles.view}>
                 <div className = {styles.infoBox} >
                   <img className={styles.coinImage} src ={coin.image.large} alt={coin.name}></img>
                   <div className = {styles.coinName}>
-                    {coin.name}
-                    <br/>
-                    {this.state.homePage}
+                    <h2>{coin.name}</h2>
+                    <a href= {this.state.homePage}>Homepage</a>
                   </div>
                 </div>
                 <div className={styles.priceBox}>
-                  <div className={styles.currentPrice}>
-                    Current price
-                    <h2>{currencyFormatter.format(Math.round(this.state.currentPrice * 100) / 100,{code: 'USD'})}</h2>
+                  <h1 className = {styles.Title}>{coin.name} Price</h1>
+                  <div className = {styles.firstRow}>
+                    <div className={styles.currentPrice}>
+                      Current price
+                      <h2>{currencyFormatter.format(Math.round(this.state.currentPrice * 100) / 100,{code: 'USD'})}</h2>
+                    </div>
+                    <div className={styles.ath}>
+                      All time high
+                      <h2>{currencyFormatter.format(Math.round(this.state.ath* 100) / 100,{code: 'USD'})}</h2>
+                      
+                    </div>
                   </div>
-                  <div className={styles.marketCap}>
-                    Market cap
-                    <h2>{currencyFormatter.format(Math.round(this.state.marketCap * 100) / 100,{code: 'USD'})}</h2>
-                  </div>
-                  <div className={styles.totalVolume}>
-                    Total volume
-                    <h2>{currencyFormatter.format(Math.round(this.state.totalVolume * 100) / 100,{code: 'USD'})}</h2>
-                  </div>
-                  
-                  <div className={styles.dailyChange}>
-                    Daily change
-                    <h2>{Math.round(this.state.priceChange24hPercentage * 100) / 100}%</h2>
-                    
-                  </div>
-                  
-                  <div className={styles.weeklyChange}>
-                    Weekly change
-                    <h2>{Math.round(this.state.priceChange7dPercentage * 100) / 100}%</h2>
-                    
-                  </div>
-                  
-                  <div className={styles.monthlyChange}>
-                    Monthly change
-                    <h2>{Math.round(this.state.priceChange30dPercentage * 100) / 100}%</h2>
-                    
-                  </div>
-                  
-                  <div className={styles.yearlyChange}>
-                    Yearly change
-                    <h2>{Math.round(this.state.priceChange1yPercentage * 100) / 100}%</h2>
-                    
+                  <div className = {styles.secondRow}>
+                    <div className={styles.dailyChange}>
+                      Daily change
+                      <h2 className = {this.state.priceChange24hPercentage>0 ? styles.rising : styles.falling}>{Math.round(this.state.priceChange24hPercentage * 100) / 100}%</h2>
+                    </div>
+                    <div className={styles.weeklyChange}>
+                      Weekly change
+                      <h2 className = {this.state.priceChange7dPercentage>0 ? styles.rising : styles.falling}>{Math.round(this.state.priceChange7dPercentage * 100) / 100}%</h2>
+                      
+                    </div>
+                    <div className={styles.monthlyChange}>
+                      Monthly change
+                      <h2 className = {this.state.priceChange30dPercentage>0 ? styles.rising : styles.falling}>{Math.round(this.state.priceChange30dPercentage * 100) / 100}%</h2>
+                    </div>
+                    <div className={styles.yearlyChange}>
+                      Yearly change
+                      <h2 className = {this.state.priceChange1yPercentage>0 ? styles.rising : styles.falling}>{Math.round(this.state.priceChange1yPercentage * 100) / 100}%</h2>
+
+                    </div>
                   </div>
                   
-                  <div className={styles.dailyChangeCurrency}>
-                    Daily change in currency 
-                    <h2>{currencyFormatter.format(Math.round(this.state.priceChange24hCurrency * 100) / 100,{code: 'USD'})}</h2>
-                    
+                  <div className = {styles.thirdRow}>
+                    <div className={styles.marketCap}>
+                      Market cap
+                      <h2>{currencyFormatter.format(Math.round(this.state.marketCap * 100) / 100,{code: 'USD'})}</h2>
+                    </div>
+                    <div className={styles.totalVolume}>
+                      Total volume
+                      <h2>{currencyFormatter.format(Math.round(this.state.totalVolume * 100) / 100,{code: 'USD'})}</h2>
+                    </div>
                   </div>
-                  <div className={styles.ath}>
-                    All time high
-                    <h2>{currencyFormatter.format(Math.round(this.state.ath* 100) / 100,{code: 'USD'})}</h2>
-                    
-                  </div>
+
                 </div>
               </div>
           </>
