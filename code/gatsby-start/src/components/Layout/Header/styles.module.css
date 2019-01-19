@@ -55,8 +55,8 @@
 
   .PrivateLink_active,
   .PrivateLink:hover {
-    color: var(--color-gold, orange);
-    border-bottom: 3px solid var(--color-gold, orange);
+    color: rgb(1, 134, 195);
+    border-bottom: 3px solid rgb(1, 134, 195);
 }
 a {
   text-decoration: none;

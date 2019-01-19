@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Fuse from 'fuse.js';
 import currencyFormatter from 'currency-formatter';
 import Lodash from 'lodash';
+import ScrollToTop from 'react-scroll-up';
 
 class FilteredCoins extends Component {
     state = {
@@ -70,14 +71,16 @@ class FilteredCoins extends Component {
         return (
             <>
                 <div className={styles.InputContainer}>
+                    <h1>Prices</h1>
                     <label className={styles.Label}>
                         <input
                             className={styles.Input}
-                            type="search"
+                            type="text"
                             value={this.state.search}
                             onChange={this.onChange}
                             placeholder="Search coins"
                         />
+                        
                     </label>  
                 </div>
                 <table className = {styles.coinTable}>
@@ -104,6 +107,9 @@ class FilteredCoins extends Component {
                             {coinsList}
                         </tbody>
                 </table>
+                <ScrollToTop showUnder={160} style = { {bottom: 15,right: 15}}>
+                    <img src = 'https://milosjanda.github.io/react-scroll-up/img/up_arrow_round.png' alt=''></img>
+                </ScrollToTop>
             </>
         );
 

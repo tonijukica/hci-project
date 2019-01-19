@@ -10,7 +10,7 @@ import {
   isLoggedIn
 } from "services/auth/auth.js";
 import { navigate } from "gatsby";
-//import styles from "styles/pages/private.module.css";
+import styles from "styles/pages/private.module.css";
 
 const Logout = () => (
   <a
@@ -20,7 +20,7 @@ const Logout = () => (
       handleLogout();
       navigate("/private");
     }}
-   // className={styles.Logout}
+    className={styles.button}
   >
     Logout
   </a>

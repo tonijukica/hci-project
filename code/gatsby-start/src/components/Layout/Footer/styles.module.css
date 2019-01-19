@@ -1,9 +1,12 @@
 
 .Footer {
     margin-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     font-size: 0.8rem;
     text-align: center;
     color: var(--color-primary, #000);
     border-top: 1px solid var(--color-grey, #000);
+}
+.empty {
+    padding: 100px;
 }

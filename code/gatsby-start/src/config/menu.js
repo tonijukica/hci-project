@@ -25,10 +25,6 @@ export default [
       text: "Dashboard",
       path: "/private/dashboard",
       private: true
-    },
-    {
-      text: "Personal pages",
-      path: "/private/personal",
-      private: true
     }
+ 
   ];

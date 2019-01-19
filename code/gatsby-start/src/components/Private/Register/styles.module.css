@@ -1,25 +1,25 @@
-.LoginForm {
+.RegisterForm {
     display: flex;
     flex-direction: column;
     justify-items: stretch;
     max-width: 400px;
     margin: 0 auto;
   }
-  .LoginForm__input {
+  .RegisterForm__input {
     outline: none;
     border: solid 1.5px lightgray;
   }
-  .LoginForm__input:focus {
+  .RegisterForm__input:focus {
     border-color: rgb(1, 134, 195);
     box-shadow: 0 0 5px 0px var(--LoginForm-input-border-focus-color);
   }
-  .LoginForm__button,
-  .LoginForm__input {
+  .RegisterForm__button,
+  .RegisterForm__input {
     padding: 0.5em;
     font-size: inherit;
     margin-top: 0.5rem;
   }
-  .LoginForm__button {
+  .RegisterForm__button {
     background-color: rgb(1, 134, 195);
     color: white;
     border: none;
@@ -27,12 +27,3 @@
     text-align: center;
     height: 45px;
   }
-  .Register__button {
-    background-color: rgb(1, 134, 195);
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    font-size: inherit;
-  }
-  

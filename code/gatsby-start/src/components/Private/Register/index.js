@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
 import styles from "./styles.module.css";
-import {Link} from 'gatsby';
 
-class LoginForm extends Component {
+class RegisterForm extends Component {
   state = {
     username: "",
     password: "",
-    message: "Enter your credentials",
+    email: "",
+    message: "Enter your information",
     invalid: false
   };
 
   handleUsername = event => this.setState({ username: event.target.value });
   handlePassword = event => this.setState({ password: event.target.value });
+  handleEmail = event => this.setState({email: event.target.value});
   handleSubmit = event => {
     event.preventDefault();
 
@@ -34,13 +35,13 @@ class LoginForm extends Component {
       : { color: "var(--color-gatsby)" };
 
     return (
-      <form className={styles.LoginForm} onSubmit={this.handleSubmit}>
+      <form className={styles.RegisterForm}>
         <label style={style}>{this.state.message}</label>
 
         <input
           autoFocus
           type="text"
-          className={styles.LoginForm__input}
+          className={styles.RegisterForm__input}
           placeholder="Username"
           onChange={this.handleUsername}
           value={this.state.username}
@@ -48,27 +49,27 @@ class LoginForm extends Component {
 
         <input
           type="password"
-          className={styles.LoginForm__input}
+          className={styles.RegisterForm__input}
           placeholder="Password"
           onChange={this.handlePassword}
           value={this.state.password}
         />
+        <input
+          type="text"
+          className={styles.RegisterForm__input}
+          placeholder="Email"
+          onChange={this.handleEmail}
+          value={this.state.email}
+        />
 
         <input
           type="submit"
-          className={styles.LoginForm__button}
-          value={"Sign in"}
+          className={styles.RegisterForm__button}
+          value={"Register"}
         />
-        <Link to='/register' className={styles.LoginForm__button} >
-            <input
-            type="button"
-            className={styles.Register__button}
-            value={"Sign up"}
-          />
-        </Link>
       </form>
     );
   }
 }
 
-export default LoginForm;
+export default RegisterForm;

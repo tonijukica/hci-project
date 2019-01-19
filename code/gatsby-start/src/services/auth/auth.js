@@ -12,11 +12,11 @@ const setUser = user =>
 
 export const handleLogin = ({ username, password }) => {
   // hardcoded user John Doe
-  if (username === `john` && password === `password`) {
+  if (username === `toni` && password === `fesb1234`) {
     setUser({
-      username: `john`,
-      name: `John Doe`,
-      email: `johndoe@fesb.hr`
+      username: `toni`,
+      name: `toni`,
+      email: `tonijukica@fesb.hr`
     });
 
     return {
@@ -26,7 +26,7 @@ export const handleLogin = ({ username, password }) => {
 
   return {
     error: true,
-    message: 'Invalid, try "john" & "password"'
+    message: 'You have entered an invalid username or password'
   };
 };
 

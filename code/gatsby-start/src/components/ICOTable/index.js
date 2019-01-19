@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import style from './styles.module.css';
 import FadeLoader from 'react-spinners/FadeLoader';
+import ScrollToTop from 'react-scroll-up';
 
 class ICOTable extends Component {
     constructor(props) {
@@ -81,11 +82,14 @@ class ICOTable extends Component {
                         {ICOList}
                     </tbody>
                 </table>
+                <ScrollToTop showUnder={160} style = { {bottom: 15,right: 15}}>
+                    <img src = 'https://milosjanda.github.io/react-scroll-up/img/up_arrow_round.png' alt=''></img>
+                </ScrollToTop>
             </div>  
             );
            }
            else {
-               return(<p></p>)
+               return(<p className = {style.empty}></p>)
            }
     }
 }

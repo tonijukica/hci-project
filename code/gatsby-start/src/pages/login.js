@@ -3,15 +3,14 @@ import { PrivateRoute } from "components";
 import { Router } from "@reach/router";
 import Login from "components/Private/Login";
 import Dashboard from "components/Private/pages/Dashboard.js";
-import Personal from "components/Private/pages/Personal.js";
 import {
   handleLogin,
   handleLogout,
   isLoggedIn
 } from "services/auth/auth.js";
 import { navigate } from "gatsby";
-//import styles from "styles/pages/private.module.css";
-
+import styles from "styles/pages/private.module.css";
+console.log(styles);
 const Logout = () => (
   <a
     href="/"
@@ -20,7 +19,7 @@ const Logout = () => (
       handleLogout();
       navigate("/login");
     }}
-    //className={styles.Logout}
+    className = {styles.button}
   >
     Logout
   </a>
@@ -28,27 +27,20 @@ const Logout = () => (
 
 export default () => (
   <>
-    {isLoggedIn() ? (
+    {isLoggedIn() ? 
       <Logout />
-    ) : (
+     : (
       <>
         <h1>Login</h1>
         <Login private="/private/dashboard" handleLogin={handleLogin} />
       </>
     )}
-
     <Router>
       <PrivateRoute
         path="/private/dashboard"
         render={Dashboard}
         redirect={"/login"}
-      />
-
-      <PrivateRoute
-        path="/private/personal"
-        render={Personal}
-        redirect={"/login"}
-      />
+      />  
     </Router>
   </>
 );

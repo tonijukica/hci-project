@@ -64,37 +64,49 @@ a {
 
 }
 .Input {
+    margin-top: 16px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-left: 1.8rem;
+    padding-right: 10px;
     overflow: hidden;
     border-width: 0;
     color: rgb(1, 134, 195);
     font-weight: 600;
+    width: 120px;
+    text-align: right;
+    
   }
   
-  .Input:focus {
+  .Input:hover, .Input:focus {
     outline: none;
     background: var(--color-grey);
+    
+  }
+  .SearchIcon {
+    
+    fill: rgb(1, 134, 195);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    transform: translateY(-50%);
   }
   
   .InputContainer {
     display: flex;
+    
+    margin-bottom: 1rem;
+  }
+  @keyframes anim {
+    from {width: 20px;}
+    to {width: 150px}
   }
   .Label {
-    position: relative;
+    position: inherit;
     margin-left: auto;
+    display: inherit;
   }
-  .SearchIcon {
-    fill: rgb(1, 134, 195);
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    width: 18px;
-    height: 18px;
-    pointer-events: none;
-    transform: translateY(-50%);
-  }
+
+
 @media screen and (max-width: 450px) {
     
     .coinChange, .coinVolume, .coinMarketCap, .coinChange_green, .coinChange_red {

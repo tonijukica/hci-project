@@ -1,7 +1,8 @@
 .Post {
     padding-top: 2.5rem;
     overflow: auto;
-    display: inline-block;
+    display: inline-grid;
+    grid-template-columns: 27% 73%;	
   }
    .Excerpt:hover {
     color: gray;
@@ -27,10 +28,13 @@
  color: rgb(1, 134, 195);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1005px) {
     
   .newsThumb {
     display: none;
+  }
+  .Post {
+    display: inline;
   }
   
 }

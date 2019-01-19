@@ -1,12 +1,10 @@
-Logout {
+.button {
     position: absolute;
-    top: 0;
     right: 0;
-    background: var(--color-gold);
+    background: rgb(1, 134, 195);
     color: white;
     padding: 0.5rem 2rem;
   }
-  
-  .Logout:hover {
+.button:hover {
     border: none;
   }
