@@ -10,7 +10,6 @@ import {
 } from "services/auth/auth.js";
 import { navigate } from "gatsby";
 import styles from "styles/pages/private.module.css";
-console.log(styles);
 const Logout = () => (
   <a
     href="/"

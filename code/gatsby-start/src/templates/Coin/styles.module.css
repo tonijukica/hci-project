@@ -1,10 +1,32 @@
 .view{
-    display: flex;
-    margin-top: 20px;   
+    display: flex;   
 }
 .view a:hover {
     border-bottom: 2px solid rgb(1, 134, 195);
 }
+.button {
+    position: absolute;
+    left: 0;
+    
+    color: black;
+    padding: 0.5rem 2rem;
+  }
+.button:hover {
+    border: none;
+  }
+  i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    color: white;
+    height: 15px;
+    width: 15px;
+  }
+  .arrow {
+    transform: rotate(135deg);
+    color: white;
+  }
 .Title {
     text-align: center;
     padding-bottom: 10px;
@@ -13,6 +35,7 @@
     flex: 30%;
     padding: 10px;
     margin: 10px;
+    margin-top: 50px;
 }
 .priceBox{
     padding: 10px;
@@ -122,14 +145,18 @@
     .coinName {
         text-align: auto;
     }
-
+    .infoBox {
+        margin-top: 0px;
+    }
     .firstRow,.secondRow,.thirdRow {
         display: block;
         height: auto;
         padding-bottom: 15px;
         border-bottom: 1px solid lightgray;
     }
-
+    .button {
+        display: none;
+    }
     .currentPrice, .ath, .dailyChange, .monthlyChange, .weeklyChange, .yearlyChange, .marketCap, .totalVolume {
         padding: 10px;
     }

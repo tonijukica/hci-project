@@ -73,7 +73,13 @@ class coin extends Component {
     else {
       return (
           <>
-              
+              <a
+                href="/prices"
+                className={styles.button}
+              >
+                <i className={styles.arrow}></i>
+                Return
+              </a> 
               <div className = {styles.view}>
                 <div className = {styles.infoBox} >
                   <img className={styles.coinImage} src ={coin.image.large} alt={coin.name}></img>

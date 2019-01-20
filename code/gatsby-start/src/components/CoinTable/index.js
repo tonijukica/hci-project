@@ -5,6 +5,7 @@ import Fuse from 'fuse.js';
 import currencyFormatter from 'currency-formatter';
 import Lodash from 'lodash';
 import ScrollToTop from 'react-scroll-up';
+import SearchIcon from './SearchIcon';
 
 class FilteredCoins extends Component {
     state = {
@@ -80,7 +81,7 @@ class FilteredCoins extends Component {
                             onChange={this.onChange}
                             placeholder="Search coins"
                         />
-                        
+                        <SearchIcon className={styles.SearchIcon} />
                     </label>  
                 </div>
                 <table className = {styles.coinTable}>

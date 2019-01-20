@@ -74,6 +74,7 @@ a {
     font-weight: 600;
     width: 120px;
     text-align: right;
+    position: relative;
     
   }
   
@@ -85,8 +86,11 @@ a {
   .SearchIcon {
     
     fill: rgb(1, 134, 195);
-    width: 24px;
-    height: 24px;
+    position: absolute;
+    margin-left: 2px;
+    top: 37px;
+    width: 18px;
+    height: 18px;
     pointer-events: none;
     transform: translateY(-50%);
   }
@@ -113,4 +117,10 @@ a {
         display: none;
     }
     
+}
+
+@media screen and (max-width: 650px) {
+    .coinMarketCap {
+        display: none;
+    }
 }
