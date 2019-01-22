@@ -21,6 +21,7 @@ class ICOTable extends Component {
               this.setState({isLoading: false});
           })
     }
+    
 
     render() {
         const { data, isLoading } = this.state;
