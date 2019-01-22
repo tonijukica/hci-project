@@ -1,4 +1,5 @@
 # hci-project
+To run go to code/gatsby-start and npm start
 ![alt text](https://i.redd.it/9b3udzeexqs11.jpg)
 
 #### Zahtjevi i zadaće
