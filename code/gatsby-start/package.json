@@ -6,7 +6,9 @@
     "develop": "./node_modules/.bin/rimraf .cache/* ./public/* && cd content/prices && node getPrices.js && cd ../../ && gatsby develop",
     "start": "npm run develop",
     "build": "./node_modules/.bin/rimraf .cache/* ./public/* && gatsby build --prefix-paths",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -32,6 +34,8 @@
     "react-spinners": "^0.5.1",
     "rimraf": "^2.6.2",
     "slick-carousel": "^1.8.1",
-    "typography": "^0.16.18"
-  }
+    "typography": "^0.16.18",
+    "snyk": "^1.192.0"
+  },
+  "snyk": true
 }
